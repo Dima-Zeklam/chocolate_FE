@@ -41,7 +41,7 @@ await axios.post(url,chocolateData);
                 {
                     this.state.chocoData.map((item, key) => {
                         return (
-                            <Card key={key} style={{ width: '18rem' }}>
+                            <Card key={key} style={{ width: '18rem',display:'inline-block', margin:'30px' }}>
                                 <Card.Img variant="top" src={item.imageUrl} />
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>

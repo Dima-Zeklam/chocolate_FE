@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button, Form } from 'react-bootstrap';
 
-class ModelForm extends React.Component {
+class UpdateModal extends React.Component {
     render() {
         return (
             <>
@@ -37,4 +37,4 @@ class ModelForm extends React.Component {
     }
 }
 
-export default ModelForm;
+export default UpdateModal;

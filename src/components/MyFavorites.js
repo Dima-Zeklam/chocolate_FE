@@ -4,7 +4,7 @@ import '././MyFavorites.js';
 import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import { Card, Button } from 'react-bootstrap';
-import ModelForm from './ModelForm.js';
+import UpdateModal from './UpdateModal.js';
 
 class MyFavorites extends React.Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class MyFavorites extends React.Component {
       title: e.target.title.value,
       imageUrl: e.target.imageUrl.value
     }
-    let updatedData = await axios.put(url, UpdateItem);
+     await axios.put(url, UpdateItem);
     this.setState({
       FavData: UpdateItem,
       show: false
@@ -78,7 +78,7 @@ class MyFavorites extends React.Component {
         {this.state.FavData.length && 
           this.state.FavData.map((item, key) => {
             return (
-              <Card key={key} style={{ width: '18rem' }}>
+              <Card key={key} style={{ width: '18rem',display:'inline-block', margin:'30px' }}>
                 <Card.Img variant="top" src={item.imageUrl} />
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
@@ -94,7 +94,7 @@ class MyFavorites extends React.Component {
         }
         
         
-        <ModelForm 
+        <UpdateModal 
         show={this.state.show}
         closeHundler={this.closeHundler}
         updateFav={this.updateFav}
