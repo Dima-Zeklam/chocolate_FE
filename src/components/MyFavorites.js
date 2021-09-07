@@ -75,10 +75,10 @@ class MyFavorites extends React.Component {
         <p>
           This is a collection of my favorites
         </p>
-        {this.state.FavData.length && 
+        {(this.state.FavData.length ?
           this.state.FavData.map((item, key) => {
             return (
-              <Card key={key} style={{ width: '18rem',display:'inline-block', margin:'30px' }}>
+              <Card key={key} style={{ width: '18rem',display:'inline-block', margin:'30px' ,textAlign:'center'}}>
                 <Card.Img variant="top" src={item.imageUrl} />
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
@@ -87,11 +87,12 @@ class MyFavorites extends React.Component {
                 </Card.Body>
               </Card>
             );
-          })
+          }):
+           <p style={{ backgroundColor: 'yellow' ,textAlign:'center',fontSize:'20px'}} > Your List is Empty ¯_(ツ)_/¯</p>)
         }
-        {
-          !this.state.FavData.length && <p style={{ backgroundColor: 'yellow' ,textAlign:'center'}} > Your List is Empty ¯_(ツ)_/¯</p>
-        }
+        
+          
+        
         
         
         <UpdateModal 

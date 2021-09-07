@@ -5,12 +5,7 @@ class UpdateModal extends React.Component {
     render() {
         return (
             <>
-                {/* show={this.state.show}
-        closeHundler={this.closeHundler}
-        updateFav={this.updateFav}
-        selscted={this.state.selscted}
-         title: e.target.title.value,
-      imageUrl: e.target.imageUrl.value */}
+              
                 <Modal show={this.props.show} onHide={this.props.closeHundler}>
                     <Form onSubmit={this.props.updateFav}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -25,7 +20,7 @@ class UpdateModal extends React.Component {
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
-                            Save changes
+                            Update item
                         </Button>
                     </Form>
                     <Button onClick={this.props.closeHundler} variant="primary" type="submit">
